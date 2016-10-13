@@ -154,16 +154,8 @@ exports.decorateTerm = function (Term, { React }) {
 
       e.preventDefault();
 
-      if (e.metaKey) {
-        // open in user's default browser when holding command key
-        shell.openExternal(e.target.href);
-      } else {
-        store.dispatch({
-          type: 'SESSION_URL_SET',
-          uid: this.props.uid,
-          url: e.target.href
-        });
-      }
+      // open in user's default browser when holding command key
+      shell.openExternal(e.target.href);
     }
 
     onLinkMouseOver (e) {
